@@ -16,8 +16,11 @@ Including another URLconf
 # config/urls.py
 from django.contrib import admin
 from django.urls import path, include # new
+from pages import views
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')), # new
+    #url('', views.pdf_view, name='pdf_view'),
 ]

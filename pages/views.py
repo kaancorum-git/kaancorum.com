@@ -1,8 +1,10 @@
-from django.shortcuts import render
+# views.py
+from django.shortcuts import render, redirect
 
-# Create your views here.
-# pages/views.py
-from django.http import HttpResponse
+from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse, HttpResponseNotFound
 
-def homePageView(request):
-    return HttpResponse('Kaan Corum is loading!')
+
+def pdf_view(request):
+    image_data = open("C:/Users/Kaan/PycharmProjects/temp/mysite/media/mypdf.pdf", "rb").read()
+    return HttpResponse(image_data, content_type="application/pdf")

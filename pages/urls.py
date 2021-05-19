@@ -1,7 +1,8 @@
-# pages/urls.py
+#urls.py
+from django.contrib import admin
 from django.urls import path
-from .views import homePageView
-
+from pages import views
+from django.conf.urls import url
 urlpatterns = [
-    path('', homePageView, name='home')
+    path('', views.pdf_view, name='pdf_view')
 ]
